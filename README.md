@@ -8,8 +8,14 @@ Make a best guess of the user's timezone. Uses the Intl API if avaliable. Works 
 
 - [Install](#install)
 - [Usage](#usage)
+- [Methods](#methods)
+  - [calc](#calc)
+  - [setWhitelist `([Array whitelist])`](#setwhitelist-array-whitelist)
+  - [unsetWhitelist](#unsetwhitelist)
+- [Tests](#tests)
 - [Developing](#developing)
   - [Requirements](#requirements)
+- [License](#license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
