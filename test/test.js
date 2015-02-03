@@ -84,21 +84,12 @@ test('#internals.getFromMoment', function getFromMomentTest(t){
 })
 
 test('#internals.getCurrentOffset', function getCurrentOffsetTest(t){
-  t.plan(2)
-
-  var dstDate = new Date(2015, 6, 1)
-    , regDate = new Date(2015, 1, 1)
+  t.plan(1)
 
   t.equal(
     typeof lib.internals.getCurrentOffset()
     , 'number'
     , 'returns a number if no date is passed'
-  )
-
-  t.equal(
-    lib.internals.getCurrentOffset(dstDate)
-    , lib.internals.getCurrentOffset(regDate)
-    , 'returns the same value regardless of DST'
   )
 })
 

@@ -24,9 +24,7 @@ var _ = require('lodash')
 
 internals.getCurrentOffset = function getCurrentOffset(date){
   date || (date = new Date())
-  var offset = date.getTimezoneOffset()
-  // if in DST, add back the 60 minutes that we lost
-  return moment(date).isDST() ? offset + 60 : offset
+  return date.getTimezoneOffset()
 }
 
 internals.whiteListMoment = function whiteListMoment(timezoneNames){
