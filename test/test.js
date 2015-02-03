@@ -34,30 +34,34 @@ test('#setWhitelist', function setWhitelistTest(t){
 test('#internals.getFromIntl', function getFromIntlTest(t){
   var aTimezone = 'mytimezone'
 
-  t.plan(2)
-
-  global.Intl = {
-    DateTimeFormat: function DateTimeFormat(){
-      return {}
+  if (!Intl){
+    t.plan(2)
+    global.Intl = {
+      DateTimeFormat: function DateTimeFormat(){
+        return {}
+      }
     }
-  }
 
-  t.equal(
-    lib.internals.getFromIntl()
-    , undefined
-    , 'returns undefined if Intl.DateTimeFormat does not return `resolvedOptions`'
-  )
+    t.equal(
+      lib.internals.getFromIntl()
+      , undefined
+      , 'returns undefined if Intl.DateTimeFormat does not return `resolvedOptions`'
+    )
 
-  global.Intl = {
-    DateTimeFormat: function DateTimeFormat(){
-      return {
-        resolvedOptions: function resolvedOptions(){
-          return {
-            timeZone: aTimezone
+    global.Intl = {
+      DateTimeFormat: function DateTimeFormat(){
+        return {
+          resolvedOptions: function resolvedOptions(){
+            return {
+              timeZone: aTimezone
+            }
           }
         }
       }
     }
+  }
+  else {
+    t.plan(1)
   }
 
   t.equal(
@@ -66,7 +70,7 @@ test('#internals.getFromIntl', function getFromIntlTest(t){
     , 'returns a string if Intl is defined'
   )
 
-  delete global.Intl
+  if (!Intl) delete global.Intl
 })
 
 test('#internals.getFromMoment', function getFromMomentTest(t){
