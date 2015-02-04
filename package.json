@@ -1,5 +1,5 @@
 {
-  "version": "0.1.1",
+  "version": "0.2.0",
   "name": "guess-timezone",
   "description": "Make a best guess of the user's timezone. Uses the Intl API if avaliable. Works on the client and the server.",
   "author": {
