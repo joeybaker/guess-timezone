@@ -1,6 +1,6 @@
 'use strict';
 
-var test = require('prova')
+var test = require('tape')
   , lib = require('../index.js')
   , sinon = require('sinon')
 

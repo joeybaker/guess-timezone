@@ -52,7 +52,7 @@ If called without an argument, limits to the most common US timezones. If called
 Removes the previously set whitelist.
 
 ## Tests
-Tests are [prova](https://github.com/azer/prova), based on [tape](https://github.com/substack/tape). They can be run with `npm test`.
+Tests in [tape](https://github.com/substack/tape). They can be run with `npm test`.
 
 Tests can be run in a loop with `npm run tdd`
 
